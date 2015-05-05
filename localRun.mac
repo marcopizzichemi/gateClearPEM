@@ -1,0 +1,27 @@
+#/vis/disable
+/control/execute ./visu.mac
+
+/gate/geometry/setMaterialDatabase ./GateMaterials.db
+/control/execute ./physics.mac
+/control/execute ./cylindricalPhantom.mac
+
+# INITIALIZE 
+/gate/run/initialize
+
+/control/execute ./source.mac
+/gate/source/F18/setActivity 15998316.2 becquerel
+
+/gate/geometry/rebuild
+
+/control/execute ./digitizer.mac
+
+# ROOT Output format
+/gate/output/root/enable
+/gate/output/root/setFileName out180_1
+/gate/output/root/setRootSinglesFlag 1
+
+/gate/application/setTimeSlice     1.  s
+/gate/application/setTimeStart     0.   s
+/gate/application/setTimeStop      1.  s
+# S T A R T  the A C Q U I S I T I O N
+#/gate/application/startDAQ
