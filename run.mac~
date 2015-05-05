@@ -1,0 +1,27 @@
+/vis/disable
+#/control/execute /afs/cern.ch/work/m/mpizzich/clearpem-sim/cylindricalPhantom/visu.mac
+
+/gate/geometry/setMaterialDatabase /afs/cern.ch/work/m/mpizzich/clearpem-sim/cylindricalPhantom/GateMaterials.db
+/control/execute /afs/cern.ch/work/m/mpizzich/clearpem-sim/cylindricalPhantom/physics.mac
+/control/execute /afs/cern.ch/work/m/mpizzich/clearpem-sim/cylindricalPhantom/cylindricalPhantom.mac
+
+# INITIALIZE 
+/gate/run/initialize
+
+/control/execute /afs/cern.ch/work/m/mpizzich/clearpem-sim/cylindricalPhantom/source.mac
+/gate/source/F18/setActivity 15998316.2 becquerel
+
+/gate/geometry/rebuild
+
+/control/execute /afs/cern.ch/work/m/mpizzich/clearpem-sim/cylindricalPhantom/digitizer.mac
+
+# ROOT Output format
+/gate/output/root/enable
+/gate/output/root/setFileName out1
+/gate/output/root/setRootSinglesFlag 1
+
+/gate/application/setTimeSlice     1.  s
+/gate/application/setTimeStart     0.   s
+/gate/application/setTimeStop      1.  s
+# S T A R T  the A C Q U I S I T I O N
+/gate/application/startDAQ
