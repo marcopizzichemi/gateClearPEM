@@ -1,18 +1,20 @@
-
 /gate/source/addSource F18
-
 
 /gate/source/F18/gps/particle e+
 /gate/source/F18/setForcedUnstableFlag true
 /gate/source/F18/setForcedHalfLife 6586.2 s
 /gate/source/F18/gps/energytype Fluor18
 /gate/source/F18/gps/type Volume
-/gate/source/F18/gps/shape Cylinder
-/gate/source/F18/gps/radius 22.5 mm
-/gate/source/F18/gps/halfz 90.0 mm
+/gate/source/F18/gps/shape Para
+#/gate/source/F18/gps/radius 22.5 mm
+/gate/source/F18/gps/halfx 90.0 mm
+/gate/source/F18/gps/halfy 80.0 mm
+/gate/source/F18/gps/halfz 1.75 mm
+
+
 /gate/source/F18/gps/angtype iso
-/gate/source/F18/gps/pos/rot1 1 0 0
-/gate/source/F18/gps/pos/rot2 0 0 1
+#/gate/source/F18/gps/pos/rot1 1 0 0
+#/gate/source/F18/gps/pos/rot2 0 0 1
 /gate/source/F18/gps/centre 0. 0. 0. cm
 
 #/gate/source/F18/visualize 1000 red 2 

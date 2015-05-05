@@ -21,27 +21,6 @@
 /gate/dummyAir/geometry/setZLength 55. cm
 /gate/dummyAir/vis/forceWireframe
 
-# PHANTOM 
-#Plastic
-/gate/dummyAir/daughters/name phantom
-/gate/dummyAir/daughters/insert box
-/gate/phantom/setMaterial PMMA
-/gate/phantom/geometry/setXLength 160. mm
-/gate/phantom/geometry/setYLength 180. mm
-/gate/phantom/geometry/setZLength 13.5 mm
-/gate/phantom/vis/setColor cyan
-/gate/phantom/vis/forceWireframe
-#Water with fdg
-/gate/phantom/daughters/name fdgvolume
-/gate/phantom/daughters/insert box
-/gate/fdgvolume/setMaterial Water
-/gate/fdgvolume/geometry/setXLength 160. mm
-/gate/fdgvolume/geometry/setYLength 180. mm
-/gate/fdgvolume/geometry/setZLength 3.5 mm
-/gate/fdgvolume/vis/setColor red
-/gate/fdgvolume/vis/forceWireframe
-
-
 # DETECTOR HEAD
 /gate/dummyAir/daughters/name detectorhead
 /gate/dummyAir/daughters/insert box
@@ -52,9 +31,8 @@
 /gate/detectorhead/vis/setColor green
 /gate/detectorhead/repeaters/insert linear
 /gate/detectorhead/linear/setRepeatNumber 2
-/gate/detectorhead/linear/setRepeatVector 0. 0. 229 mm
+/gate/detectorhead/linear/setRepeatVector 0. 0. 229. mm
 /gate/detectorhead/vis/forceWireframe
-
 
 # MODULE
 /gate/detectorhead/daughters/name module
@@ -70,7 +48,6 @@
 /gate/module/cubicArray/setRepeatNumberZ 1
 /gate/module/cubicArray/setRepeatVector 13. 44.5 0 mm
 /gate/module/vis/forceWireframe
-
 
 # SUBMODULE
 /gate/module/daughters/name submodule
@@ -106,21 +83,7 @@
 /gate/crystal/cubicArray/setRepeatVector 2.3 2.3 0 mm
 
 
-# ATTACH VOLUMES TO SYSTEM 
-/gate/systems/scanner/level1/attach detectorhead
-/gate/systems/scanner/level2/attach module
-/gate/systems/scanner/level3/attach submodule
-/gate/systems/scanner/level4/attach crystal
 
-# ATTACH SENSITIVE DETECTOR
-/gate/crystal/attachCrystalSD
-
-# PHANTOM defined as SENSITIVE 
-/gate/dummyAir/attachPhantomSD 
-/gate/phantom/attachPhantomSD 
-/gate/fdgvolume/attachPhantomSD 
-/gate/module/attachPhantomSD 
-/gate/submodule/attachPhantomSD 
 
 
 

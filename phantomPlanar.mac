@@ -1,0 +1,19 @@
+# PHANTOM planar
+# Plastic
+/gate/dummyAir/daughters/name phantom
+/gate/dummyAir/daughters/insert box
+/gate/phantom/setMaterial PMMA
+/gate/phantom/geometry/setXLength 180. mm
+/gate/phantom/geometry/setYLength 160. mm
+/gate/phantom/geometry/setZLength 13.5 mm
+/gate/phantom/vis/setColor cyan
+/gate/phantom/vis/forceWireframe
+# Water with fdg
+/gate/phantom/daughters/name fdgvolume
+/gate/phantom/daughters/insert box
+/gate/fdgvolume/setMaterial Water
+/gate/fdgvolume/geometry/setXLength 180. mm
+/gate/fdgvolume/geometry/setYLength 160. mm
+/gate/fdgvolume/geometry/setZLength 3.5 mm
+/gate/fdgvolume/vis/setColor red
+/gate/fdgvolume/vis/forceWireframe

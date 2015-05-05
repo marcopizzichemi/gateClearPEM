@@ -1,0 +1,97 @@
+# W O R L D 
+
+/gate/world/geometry/setXLength 60. cm 
+/gate/world/geometry/setYLength 60. cm 
+/gate/world/geometry/setZLength 60. cm 
+
+
+/gate/world/daughters/name scanner
+/gate/world/daughters/insert box
+/gate/scanner/setMaterial Air
+/gate/scanner/geometry/setXLength 55. cm
+/gate/scanner/geometry/setYLength 55. cm
+/gate/scanner/geometry/setZLength 55. cm
+/gate/scanner/vis/forceWireframe
+
+/gate/scanner/daughters/name dummyAir
+/gate/scanner/daughters/insert box
+/gate/dummyAir/setMaterial Air
+/gate/dummyAir/geometry/setXLength 55. cm
+/gate/dummyAir/geometry/setYLength 55. cm
+/gate/dummyAir/geometry/setZLength 55. cm
+/gate/dummyAir/vis/forceWireframe
+
+# DETECTOR HEAD
+/gate/dummyAir/daughters/name detectorhead
+/gate/dummyAir/daughters/insert box
+/gate/detectorhead/setMaterial BaSO4
+/gate/detectorhead/geometry/setXLength 180. mm
+/gate/detectorhead/geometry/setYLength 160. mm
+/gate/detectorhead/geometry/setZLength 20. mm
+/gate/detectorhead/vis/setColor green
+/gate/detectorhead/repeaters/insert linear
+/gate/detectorhead/linear/setRepeatNumber 2
+/gate/detectorhead/linear/setRepeatVector 0. 0. 229. mm
+/gate/detectorhead/vis/forceWireframe
+
+# MODULE
+/gate/detectorhead/daughters/name module
+/gate/detectorhead/daughters/insert box
+/gate/module/setMaterial BaSO4
+/gate/module/geometry/setXLength 44.5 mm
+/gate/module/geometry/setYLength 13. mm
+/gate/module/geometry/setZLength 20. mm
+/gate/module/vis/setColor red
+/gate/module/repeaters/insert cubicArray
+/gate/module/cubicArray/setRepeatNumberY 12
+/gate/module/cubicArray/setRepeatNumberX 4
+/gate/module/cubicArray/setRepeatNumberZ 1
+/gate/module/cubicArray/setRepeatVector 44.5 13. 0 mm
+/gate/module/vis/forceWireframe
+
+# SUBMODULE
+/gate/module/daughters/name submodule
+/gate/module/daughters/insert box
+/gate/submodule/setMaterial PTFE
+/gate/submodule/geometry/setYLength 4.6 mm
+/gate/submodule/geometry/setXLength 18.4 mm
+/gate/submodule/geometry/setZLength 20. mm
+/gate/submodule/vis/setColor green
+/gate/submodule/repeaters/insert cubicArray
+/gate/submodule/cubicArray/setRepeatNumberX 2
+/gate/submodule/cubicArray/setRepeatNumberY 2
+/gate/submodule/cubicArray/setRepeatNumberZ 1
+/gate/submodule/cubicArray/setRepeatVector 21.9 4.9 0 mm
+/gate/submodule/vis/forceWireframe
+
+
+# CRYSTAL
+/gate/submodule/daughters/name crystal
+/gate/submodule/daughters/insert box
+/gate/crystal/geometry/setXLength 2. mm
+/gate/crystal/geometry/setYLength 2. mm
+/gate/crystal/geometry/setZLength 20. mm
+/gate/crystal/setMaterial LYSO
+/gate/crystal/vis/setColor yellow
+/gate/crystal/vis/forceWireframe
+
+# REPEAT CRYSTAL
+/gate/crystal/repeaters/insert cubicArray
+/gate/crystal/cubicArray/setRepeatNumberY 2
+/gate/crystal/cubicArray/setRepeatNumberX 8
+/gate/crystal/cubicArray/setRepeatNumberZ 1
+/gate/crystal/cubicArray/setRepeatVector 2.3 2.3 0 mm
+
+
+
+
+
+
+
+
+
+
+
+
+
+

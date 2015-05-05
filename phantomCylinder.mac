@@ -1,0 +1,19 @@
+# PHANTOM cylinder 
+# Plastic
+/gate/dummyAir/daughters/name phantom
+/gate/dummyAir/daughters/insert cylinder
+/gate/phantom/setMaterial PMMA
+/gate/phantom/geometry/setRmax 32.5 mm
+/gate/phantom/geometry/setHeight 200. mm
+/gate/phantom/placement/setRotationAxis 0 1 0 
+/gate/phantom/placement/setRotationAngle 90 deg 
+/gate/phantom/vis/setColor cyan
+/gate/phantom/vis/forceWireframe
+# Water with fdg
+/gate/phantom/daughters/name fdgvolume
+/gate/phantom/daughters/insert cylinder
+/gate/fdgvolume/setMaterial Water
+/gate/fdgvolume/geometry/setRmax 22.5 mm
+/gate/fdgvolume/geometry/setHeight 180. mm
+/gate/fdgvolume/vis/setColor red
+/gate/fdgvolume/vis/forceWireframe

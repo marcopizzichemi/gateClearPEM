@@ -1,0 +1,15 @@
+# ATTACH VOLUMES TO SYSTEM 
+/gate/systems/scanner/level1/attach detectorhead
+/gate/systems/scanner/level2/attach module
+/gate/systems/scanner/level3/attach submodule
+/gate/systems/scanner/level4/attach crystal
+
+# ATTACH SENSITIVE DETECTOR
+/gate/crystal/attachCrystalSD
+
+# PHANTOM defined as SENSITIVE 
+/gate/dummyAir/attachPhantomSD 
+/gate/phantom/attachPhantomSD 
+/gate/fdgvolume/attachPhantomSD 
+/gate/module/attachPhantomSD 
+/gate/submodule/attachPhantomSD 
