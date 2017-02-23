@@ -7,10 +7,10 @@
 /gate/digitizer/Singles/blurring/setResolution 0.15
 /gate/digitizer/Singles/blurring/setEnergyOfReference 511. keV
 /gate/digitizer/Singles/insert thresholder
-/gate/digitizer/Singles/thresholder/setThreshold 400. keV
+/gate/digitizer/Singles/thresholder/setThreshold 150. keV
 /gate/digitizer/Singles/insert upholder
 /gate/digitizer/Singles/upholder/setUphold 650. keV
 
 
-#/gate/digitizer/Coincidences/setWindow 2.83 ns
-#/gate/digitizer/Coincidences/MultiplesPolicy  takeWinnerOfGoods
+/gate/digitizer/Coincidences/setWindow 2.83 ns
+/gate/digitizer/Coincidences/MultiplesPolicy  takeWinnerOfGoods

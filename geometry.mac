@@ -5,7 +5,7 @@
 /gate/world/geometry/setZLength 60. cm 
 
 
-/gate/world/daughters/name scanner
+/gate/world/daughters/name PETscanner
 /gate/world/daughters/insert box
 /gate/scanner/setMaterial Air
 /gate/scanner/geometry/setXLength 55. cm
@@ -43,7 +43,7 @@
 /gate/module/geometry/setZLength 20. mm
 /gate/module/vis/setColor red
 /gate/module/repeaters/insert cubicArray
-/gate/module/cubicArray/setRepeatNumberY 12
+/gate/module/cubicArray/setRepeatNumberY 1
 /gate/module/cubicArray/setRepeatNumberX 4
 /gate/module/cubicArray/setRepeatNumberZ 1
 /gate/module/cubicArray/setRepeatVector 44.5 13. 0 mm
